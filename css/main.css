@@ -1,0 +1,203 @@
+/* Style file for index.html */
+/* 1 --- Global variable */
+/* 2 --- Layout */
+
+/* 1 ---- Global variable ----- */
+:root {
+    --color-bg-body: hsl(205, 78%, 58%);
+    --color-bg-section: hsl(80, 50%, 90%);
+    --color-font-body: rgb(95, 4, 4);
+    --color-board-frame: hsl(0, 0%, 0%);
+    --img-board: url('../img/water.webp');
+    --img-cardback: url('../img/BACK.png');
+    --img-cardfront: url('../img/Normal_bg.webp');
+    --img-cardfront2: url('../img/Pasisve_bg.webp');
+}
+
+/* Required -- put them into the right position */
+#zen-preamble {
+    --pos-top: 115px;
+    --pos-left: 10px;
+    --front-color: pink;
+    z-index: 1;
+}
+
+#zen-explanation {
+    --pos-top: 115px;
+    --pos-left: 275px;
+    --front-color: green;
+    z-index: 2;
+}
+
+#zen-participation {
+    --pos-top: 115px;
+    --pos-left: 555px;
+    --front-color: blue;
+    z-index: 3;
+}
+#zen-requirements {
+    --pos-top: 115px;
+    --pos-left: 825px;
+    --front-color: red;
+    z-index: 4;
+}
+#zen-benefits {
+    --pos-top: 115px;
+    --pos-left: 1095px;
+    --front-color: red;
+    z-index: 5;
+}
+
+#zen-summary {
+    --pos-top: 357px;
+    --pos-left: 1095px;
+    --front-color: red;
+    z-index: 6;
+}
+
+body {
+    background-color: var(--color-bg-body);
+    color: var(--color-font-body);
+}
+
+/* 2 --- Layout */
+.page-wrapper {
+    background-image: var(--img-board);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90vh;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+/* relative position */
+header abbr {
+    position: relative;
+    top: -10px;
+    font-size: 0.5em;
+}
+
+article {
+    position: absolute;
+    top: var(--pos-top);
+    left: var(--pos-left);
+    background-image: var(--img-cardfront2);
+    width: 250px;
+    height: 50vh;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    /* Element Model */
+    padding-left: 10px;
+    padding-right: 163px;
+    padding-top: 10px;
+    padding-bottom: 350px;
+}
+
+/* hide the element */
+aside {
+    display: none;
+}
+
+header h1 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: underline;
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url('../fonts/chunkfive.woff') format('woff'), 
+    url('../fonts/chunkfive.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+header h2 {
+    font-family: "myFont", Arial, Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: italic;
+}
+
+a{
+    text-transform: uppercase;
+}
+
+footer{
+    position: fixed;
+    top: 40px;
+    left: 1010px;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    animation: footerSlide 8s ease-in-out infinite alternate;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@keyframes footerSlide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-200px);
+    }
+}
+
+/* CSS3 Grid Code */
+/* div{
+  background-color:  hsla(200,50%,70%,0.3);
+}
+
+.wrapper {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 100px  repeat(2, 1fr) 100px;
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.one{
+  grid-column: 2/4;
+  grid-row: 2/4;
+}
+
+.two{
+  grid-column: 1/4;
+  grid-row: 1/2;
+}
+
+.three{
+  grid-column: 1/1;
+  grid-row: 2/4;
+}
+
+.four{
+  grid-column: 4/4;
+  grid-row: 1/3;
+}
+
+.five{
+  grid-column: 1/4;
+  grid-row: 4/5;
+}
+
+.six{
+  grid-column: 3/5;
+  grid-row: 3/5;
+} 
+*/
